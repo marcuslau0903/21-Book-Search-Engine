@@ -6,14 +6,23 @@ export const LOGIN = gql`
       token
       user {
         _id
-        email
         username
+        email
+        bookCount
+        savedBooks {
+          bookId
+          authors
+          description
+          title
+          image
+          link
+        }
       }
     }
   }
 `;
 
-export const SIGNUP = gql`
+export const ADD_USER = gql`
   mutation Mutation($addUserInput: AddUserInput!) {
     addUser(input: $addUserInput) {
       token
@@ -21,6 +30,15 @@ export const SIGNUP = gql`
         _id
         username
         email
+        bookCount
+        savedBooks {
+          bookId
+          authors
+          description
+          title
+          image
+          link
+        }
       }
     }
   }

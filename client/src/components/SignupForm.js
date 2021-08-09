@@ -144,4 +144,3 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
-© 2021 GitHub, Inc.
