@@ -1,6 +1,7 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
+const context = require("./context")
 
 const db = require("./config/connection");
 const typeDefs = require("./typeDefs");
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context,
 });
 
 const startServer = async () => {
